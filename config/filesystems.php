@@ -15,6 +15,8 @@ return [
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -53,16 +55,35 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
-            // 'visibility' => 'public', // https://statamic.dev/assets#visibility
             'throw' => false,
         ],
 
-        'assets' => [
+        'images' => [
             'driver' => 'local',
-            'root' => public_path('assets'),
-            'url' => '/assets',
+            'root' => public_path('images'),
+            'url' => '/images',
             'visibility' => 'public',
-            'throw' => false,
+        ],
+
+        'favicons' => [
+            'driver' => 'local',
+            'root' => public_path('favicons'),
+            'url' => '/favicons',
+            'visibility' => 'public',
+        ],
+
+        'files' => [
+            'driver' => 'local',
+            'root' => public_path('files'),
+            'url' => '/files',
+            'visibility' => 'public',
+        ],
+
+        'social_images' => [
+            'driver' => 'local',
+            'root' => public_path('social_images'),
+            'url' => '/social_images',
+            'visibility' => 'public',
         ],
 
     ],

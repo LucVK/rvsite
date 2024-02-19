@@ -7,24 +7,13 @@ return [
     | Version
     |--------------------------------------------------------------------------
     |
-    | The desired Antlers language version to utilize. Supported values are
-    | "runtime" for the modern parser, or "regex" for the legacy parser.
+    | The desired Antlers language version to utilize. Possibly values are:
+    |   - regex: Utilize pre-3.3 Antlers. Appropriate for existing sites.
+    |   - runtime: Utilizes >= 3.3 Antlers, recommended for new sites.
     |
     */
 
     'version' => 'runtime',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Debugbar
-    |--------------------------------------------------------------------------
-    |
-    | Defaults to true. Set to false to disable antlers template profiling in
-    | the Laravel Debugbar package (when enabled).
-    |
-    */
-    
-    'debugbar' => env('STATAMIC_ANTLERS_DEBUGBAR', true),
 
     /*
     |--------------------------------------------------------------------------

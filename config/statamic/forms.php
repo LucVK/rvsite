@@ -57,4 +57,19 @@ return [
 
     'csv_delimiter' => ',',
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | CSV Export Headings
+    |--------------------------------------------------------------------------
+    |
+    | The values to be used in the csv export header rows.
+    | Can be the field handle or the field display text.
+    |
+    | Supported values: "handle", "display"
+    |
+    */
+
+    'csv_headers' => 'display',
+
 ];

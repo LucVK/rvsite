@@ -11,7 +11,7 @@ return [
     | assumes that git is already installed and accessible by your
     | PHP process' server user. For more info, see the docs at:
     |
-    | https://statamic.dev/git-automation
+    | https://statamic.dev/git-integration
     |
     */
 
@@ -25,8 +25,6 @@ return [
     | By default, commits are automatically queued when `Saved` or `Deleted`
     | events are fired. If you prefer users to manually trigger commits
     | using the `Git` utility interface, you may set this to `false`.
-    |
-    | https://statamic.dev/git-automation#committing-changes
     |
     */
 
@@ -71,8 +69,6 @@ return [
     | will attempt to commit with the authenticated user's name and email
     | when possible, falling back to the below user when not available.
     |
-    | https://statamic.dev/git-automation#git-user
-    |
     */
 
     'use_authenticated' => true,
@@ -103,7 +99,10 @@ return [
         resource_path('users'),
         resource_path('preferences.yaml'),
         storage_path('forms'),
-        public_path('assets'),
+        public_path('images'),
+        public_path('favicons'),
+        public_path('files'),
+        public_path('social_images'),
     ],
 
     /*
@@ -127,13 +126,11 @@ return [
     | and `git commit` your changes. These commands will be run once
     | per repo, attempting to consolidate commits where possible.
     |
-    | https://statamic.dev/git-automation#customizing-commits
-    |
     */
 
     'commands' => [
         'git add {{ paths }}',
-        'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }}"',
+        'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }} [BOT]"',
     ],
 
     /*
@@ -144,8 +141,6 @@ return [
     | Determine whether `git push` should be run after the commands above
     | have finished. This is disabled by default, but can be enabled
     | globally, or per environment using the provided variable.
-    |
-    | https://statamic.dev/git-automation#pushing-changes
     |
     */
 
@@ -163,8 +158,8 @@ return [
     */
 
     'ignored_events' => [
-        // \Statamic\Events\UserSaved::class,
-        // \Statamic\Events\UserDeleted::class,
+        // \Statamic\Events\Data\UserSaved::class,
+        // \Statamic\Events\Data\UserDeleted::class,
     ],
 
     /*

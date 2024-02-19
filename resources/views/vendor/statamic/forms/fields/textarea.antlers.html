@@ -1,0 +1,15 @@
+<!-- /vendor/statamic/forms/fields/textarea.antlers.html -->
+<textarea
+    x-model="form.{{ handle }}"
+    @change="form.validate('{{ handle }}')"
+    :aria-invalid="form.invalid('{{ handle }}')"
+    :class="{ 'border-red-600 focus-visible:border-red-600': form.invalid('{{ handle }}') }"
+    class="w-full h-32 rounded border-neutral focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary motion-safe:transition caret-primary"
+    id="{{ handle }}"
+    name="{{ handle }}"
+    rows="5"
+    {{ placeholder ?= 'placeholder="{placeholder}"' }}
+    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ character_limit ?= 'maxlength="{character_limit}"' }}
+>{{ old }}</textarea>
+<!-- End: /vendor/statamic/forms/fields/textarea.antlers.html -->

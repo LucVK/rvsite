@@ -3,13 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Statamic\Statamic;
-use App\Providers\MailerSend\MailerSendBulkTransport;
-use MailerSend\MailerSend;
-use Illuminate\Support\Arr;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Mail\MailManager;
-use Illuminate\Support\Facades\URL;
+use Studio1902\PeakSeo\Handlers\ErrorPage;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,16 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(MailerSend::class, function(Application $app) {
-            $config = $this->app['config']->get('mailersend-driver', []);
-
-            return new MailerSend([
-                'api_key' => Arr::get($config, 'api_key'),
-                'host' => Arr::get($config, 'host'),
-                'protocol' => Arr::get($config, 'protocol'),
-                'api_path' => Arr::get($config, 'api_path'),
-            ]);
-        });
+        //
     }
 
     /**
@@ -35,29 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Statamic::vite('app', [
-        //     'resources/js/cp.js',
-        //     'resources/css/cp.css',
-        // ]);
+        // Statamic::script('app', 'cp');
+        // Statamic::style('app', 'cp');
 
-        if($this->app->environment('production')) {
-            URL::forceScheme('https');
-        }
-
-        $this->app->make(MailManager::class)->extend('mailersendbulk', function () {
-            $config = $this->app['config']->get('mailersend-driver', []);
-
-            $mailersend = new MailerSend([
-                'api_key' => Arr::get($config, 'api_key'),
-                'host' => Arr::get($config, 'host'),
-                'protocol' => Arr::get($config, 'protocol'),
-                'api_path' => Arr::get($config, 'api_path'),
-            ]);
-
-            return new MailerSendBulkTransport($mailersend);
-        });            
-
-        $this->loadJsonTranslationsFrom(base_path() . "/lang/rvwaarloos");
-
+        ErrorPage::handle404AsEntry();
     }
 }
