@@ -79,7 +79,7 @@ tabs:
               time_seconds_enabled: false
               earliest_date: '1920-01-01'
               latest_date: '2050-01-01'
-              format: Y-m-d
+              format: d/m/Y
               type: date
               display: Birthday
               width: 25

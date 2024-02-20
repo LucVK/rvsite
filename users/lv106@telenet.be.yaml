@@ -8,3 +8,11 @@ preferences:
       after_save: create_another
     wtgroups:
       after_save: create_another
+  collections:
+    clubmembers:
+      columns:
+        - title
+        - is_active
+        - status
+        - birthday
+        - email
