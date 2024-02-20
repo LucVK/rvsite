@@ -54,8 +54,6 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
-              validate:
-                - required
           -
             handle: phone
             field:
@@ -90,8 +88,6 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
-              validate:
-                - required
           -
             handle: is_active
             field:
@@ -120,8 +116,6 @@ tabs:
                     visibility: visible
                     replicator_preview: true
                     hide_display: false
-                    validate:
-                      - required
                 -
                   handle: zipcode
                   field:
@@ -133,7 +127,6 @@ tabs:
                     replicator_preview: true
                     hide_display: false
                     validate:
-                      - required
                       - 'between:1000,9999'
                     width: 25
                 -
@@ -148,8 +141,6 @@ tabs:
                     visibility: visible
                     replicator_preview: true
                     hide_display: false
-                    validate:
-                      - required
                     width: 50
                 -
                   handle: country
@@ -171,8 +162,6 @@ tabs:
                     visibility: visible
                     replicator_preview: true
                     hide_display: false
-                    validate:
-                      - required
                     width: 25
               fullscreen: false
               type: group
@@ -332,6 +321,20 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+          -
+            handle: old_wt_id
+            field:
+              default: '0'
+              type: integer
+              display: 'Old wt id'
+              width: 25
+              listable: hidden
+              instructions_position: above
+              visibility: read_only
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
   sidebar:
     display: Sidebar
     sections:
