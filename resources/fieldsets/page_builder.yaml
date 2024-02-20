@@ -15,6 +15,13 @@ fields:
           instructions: 'Interactive blocks.'
           icon: programming-script-code
           sets:
+            cards:
+              display: Cards
+              instructions: 'Show linkable cards with text.'
+              icon: link
+              fields:
+                -
+                  import: cards
             form:
               display: Form
               instructions: 'Select and render a form.'
@@ -22,13 +29,13 @@ fields:
               fields:
                 -
                   import: form
-            cards:
-              display: 'Cards'
-              instructions: 'Show linkable cards with text.'
-              icon: link
+            index_content:
+              display: 'Index content'
+              instructions: 'Render the currently mounted entries if available.'
+              icon: file-content-list
               fields:
                 -
-                  import: cards
+                  import: index_content
         text:
           display: Text
           instructions: 'Text based blocks.'

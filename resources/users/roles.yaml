@@ -34,6 +34,15 @@ editor:
     - 'view contact form submissions'
     - 'delete contact form submissions'
     - 'access default site'
+    - 'view clubmembers entries'
+    - 'edit clubmembers entries'
+    - 'create clubmembers entries'
+    - 'delete clubmembers entries'
+    - 'publish clubmembers entries'
+    - 'reorder clubmembers entries'
+    - 'edit other authors clubmembers entries'
+    - 'publish other authors clubmembers entries'
+    - 'delete other authors clubmembers entries'
 marketeer:
   title: Marketeer
   permissions:

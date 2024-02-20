@@ -1,0 +1,11 @@
+title: Clubmembers
+route: '/{mount}/{slug}'
+layout: layout
+template: clubmembers/show
+revisions: false
+date: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+mount: 25326a4a-6a55-4abb-a676-fa3bc2db9c19
