@@ -16,3 +16,4 @@ preferences:
         - status
         - birthday
         - email
+      per_page: 25

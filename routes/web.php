@@ -7,6 +7,7 @@ use League\Csv\Reader;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\Statement;
 use Statamic\Facades\Entry;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,11 +45,9 @@ Route::get('/l', function() {
         //get 25 records starting from the 11th row
         $stmt = Statement::create()
             ->offset(0)
-            ->limit(2)
+            ->limit(2000)
         ;
         $records = $stmt->process($reader);
-
-
 
         foreach ($records as $offset => $record) {
             $firstname = ucwords(trim($record['Voornaam']));
@@ -79,11 +78,8 @@ Route::get('/l', function() {
                 $deptartment = 'dept-wt';
             } 
 
-
-
-
             // $entry = Entry::make()->collection('clubmembers')->slug((string) Str::uuid());
-            $entry = Entry::make()->collection('clubmembers');
+            $entry = Entry::make()->collection('clubmembers')->slug((string) Str::uuid());
             $entry
             ->data([
                 'firstname' => $firstname,
@@ -100,7 +96,7 @@ Route::get('/l', function() {
                     [
                         'season' => 2024,
                         'department' => $deptartment,
-                        'payment' => 'tb',
+                        'payment' => 'b',
                         'type' =>  'rv_lidgeld',
                         'enabled' => true,
                     ],

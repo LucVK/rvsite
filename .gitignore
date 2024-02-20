@@ -4,6 +4,7 @@
 /public/static/
 /storage/*.key
 /vendor
+/content/collections/clubmembers
 .env
 .env.backup
 /.phpunit.cache
