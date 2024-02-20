@@ -11,6 +11,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Mail\MailManager;
 use Illuminate\Support\Facades\URL;
+use Statamic\Facades\Collection;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -60,5 +61,14 @@ class AppServiceProvider extends ServiceProvider
 
         $this->loadJsonTranslationsFrom(base_path() . "/lang/rvwaarloos");
 
+        $this->setComputedValues();
     }
+
+    private function setComputedValues(): void
+    {
+        Collection::computed('clubmembers', 'is_active', function ($entry, $value) {
+            return true;
+        });
+    }
+
 }

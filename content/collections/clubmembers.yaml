@@ -1,11 +1,18 @@
 title: Clubmembers
-route: '/{mount}/{slug}'
-layout: layout
 template: clubmembers/show
+layout: layout
+mount: 25326a4a-6a55-4abb-a676-fa3bc2db9c19
+taxonomies:
+  - departments
 revisions: false
-date: false
+title_format: '{firstname} {lastname}'
+route: '/{mount}/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
   future: private
-mount: 25326a4a-6a55-4abb-a676-fa3bc2db9c19
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

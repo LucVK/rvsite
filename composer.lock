@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5da76eb05d194ea7ef609788a10ab2e",
+    "content-hash": "de0c72f369626352d40b53bd449d0f10",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -68,6 +68,72 @@
                 "source": "https://github.com/ajthinking/archetype/tree/v1.1.5"
             },
             "time": "2022-08-24T05:52:35+00:00"
+        },
+        {
+            "name": "aryehraber/statamic-uuid",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aryehraber/statamic-uuid.git",
+                "reference": "514a57dad6216b17b3245ab92d4a86ea682e8feb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aryehraber/statamic-uuid/zipball/514a57dad6216b17b3245ab92d4a86ea682e8feb",
+                "reference": "514a57dad6216b17b3245ab92d4a86ea682e8feb",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "^3.0|^4.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Uuid",
+                    "slug": "uuid",
+                    "description": "One of its kind; unlike anything else"
+                },
+                "laravel": {
+                    "providers": [
+                        "AryehRaber\\Uuid\\UuidServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AryehRaber\\Uuid\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aryeh Raber",
+                    "email": "aryeh.raber@gmail.com",
+                    "homepage": "https://aryeh.dev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "One of its kind; unlike anything else",
+            "homepage": "https://github.com/aryehraber/statamic-uuid",
+            "keywords": [
+                "fieldtype",
+                "statamic",
+                "uuid"
+            ],
+            "support": {
+                "issues": "https://github.com/aryehraber/statamic-uuid/issues",
+                "source": "https://github.com/aryehraber/statamic-uuid/tree/v2.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/aryehraber",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-31T11:49:43+00:00"
         },
         {
             "name": "beberlei/assert",
@@ -12586,5 +12652,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -9,19 +9,274 @@ tabs:
           -
             handle: title
             field:
-              type: text
-              required: true
+              type: hidden
+              required: false
+          -
+            handle: firstname
+            field:
               input_type: text
-              localizable: true
+              antlers: false
+              type: text
+              display: Firstname
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: lastname
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Lastname
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              input_type: email
+              antlers: false
+              type: text
+              display: Email
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: phone
+            field:
+              input_type: tel
+              antlers: false
+              type: text
+              display: Phone
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: birthday
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              earliest_date: '1920-01-01'
+              latest_date: '2050-01-01'
+              format: Y-m-d
+              type: date
+              display: Birthday
+              width: 25
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: is_active
+            field:
+              default: false
+              type: toggle
+              display: IsActive
+              width: 25
               listable: true
-              display: Title
+              instructions_position: above
+              visibility: computed
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: address
+            field:
+              fields:
+                -
+                  handle: street
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Street
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - required
+                -
+                  handle: zipcode
+                  field:
+                    type: integer
+                    display: Zipcode
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - required
+                      - 'between:1000,9999'
+                    width: 25
+                -
+                  handle: city
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: City
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - required
+                    width: 50
+                -
+                  handle: country
+                  field:
+                    options:
+                      be: Belgium
+                      nl: Netherlands
+                    taggable: false
+                    push_tags: false
+                    multiple: false
+                    clearable: false
+                    searchable: true
+                    cast_booleans: false
+                    default: be
+                    type: select
+                    display: Country
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - required
+                    width: 25
+              fullscreen: false
+              type: group
+              display: Address
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: rvid
+            field:
+              hidden: true
+              readonly: true
+              id_type: uuid
+              type: uuid
+              display: Rvid
+              listable: hidden
+              instructions_position: above
+              visibility: hidden
+              replicator_preview: true
+              hide_display: false
               validate:
                 - required
       -
-        display: 'Page builder'
+        display: MemberManagement
         fields:
           -
-            import: page_builder
+            handle: clubmemberships
+            field:
+              collapse: true
+              previews: true
+              fullscreen: false
+              sets:
+                rv:
+                  display: RV
+                  instructions: null
+                  icon: null
+                  sets:
+                    rv_lidgeld:
+                      display: 'RV Lidgeld'
+                      instructions: null
+                      icon: money-cash-bill
+                      fields:
+                        -
+                          handle: season
+                          field:
+                            type: integer
+                            display: Season
+                            width: 25
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: department
+                          field:
+                            max_items: 1
+                            mode: select
+                            create: false
+                            taxonomies:
+                              - departments
+                            type: terms
+                            display: Department
+                            width: 33
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: payment
+                          field:
+                            options:
+                              tb: 'Te betalen'
+                              b: Betaald
+                            taggable: false
+                            push_tags: false
+                            multiple: false
+                            max_items: 1
+                            clearable: false
+                            searchable: true
+                            cast_booleans: false
+                            default: tb
+                            type: select
+                            display: Payment
+                            width: 25
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: Clubmemberships
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   seo:
     display: SEO
     sections:
@@ -55,6 +310,28 @@ tabs:
         fields:
           -
             import: 'statamic-peak-seo::seo_jsonld'
+  wielertoeristen:
+    display: Wielertoeristen
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: wtgroup
+            field:
+              max_items: 1
+              mode: select
+              create: true
+              taxonomies:
+                - wtgroups
+              type: terms
+              display: WtGroup
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -66,8 +343,22 @@ tabs:
             field:
               type: slug
               localizable: true
+              validate:
+                - required
               generate: true
               listable: hidden
               display: Slug
-              validate:
-                - required
+              instructions_position: above
+              visibility: read_only
+              replicator_preview: true
+              from: rvid
+              show_regenerate: false
+              hide_display: false
+          -
+            handle: departments
+            field:
+              type: terms
+              taxonomies:
+                - departments
+              display: Departments
+              mode: select

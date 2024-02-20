@@ -1,6 +1,22 @@
 {
+    "Address": "Adres",
+    "Street": "Straat",
+    "Zipcode": "Postcode",
+    "City": "Gemeente",
+    "Country": "Land",
     "Clubmembers": "Clubleden",
+    "MemberManagement": "Ledenbeheer",
+    "Clubmemberships": "Lidmaatschappen",
+    "IsActive": "Actief",
+    "Season": "Seizoen",
+    "Payment": "Betaling",
+    "Firstname": "Voornaam",
+    "Lastname": "Achternaam",
+    "Birthday": "Geboortdatum",
+    "Phone": "Telefoon",
     "Departments": "Afdelingen",
+    "Department": "Afdeling",
     "WtGroups": "Wielertoeristen groepen",
+    "WtGroup": "Wielertoeristen groep",
     "TranslationTest": "Test vertaling"
 }
