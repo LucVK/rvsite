@@ -1,8 +1,20 @@
 {
   "resources/css/site.css": {
-    "file": "assets/site-54y9HhaR.css",
+    "file": "assets/site-Ppfuz8tn.css",
     "isEntry": true,
     "src": "resources/css/site.css"
+  },
+  "resources/images/login.webp": {
+    "file": "assets/login-uXw0bOEm.webp",
+    "src": "resources/images/login.webp"
+  },
+  "resources/images/rv-logo.svg": {
+    "file": "assets/rv-logo-8eKvmSKq.svg",
+    "src": "resources/images/rv-logo.svg"
+  },
+  "resources/images/rv-text.svg": {
+    "file": "assets/rv-text-gDyvfLa5.svg",
+    "src": "resources/images/rv-text.svg"
   },
   "resources/js/site.js": {
     "file": "assets/site-y7SQrNze.js",
