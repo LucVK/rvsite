@@ -19,6 +19,8 @@ class CustomizeStatamicCp
     {
         Config::set('statamic.cp.custom_cms_name', 'RV Waarloos');
         Config::set('statamic.cp.custom_logo_url', Vite::asset('resources/images/rv-text.svg'));
+        Config::set('statamic.cp.custom_logo_url.nav', Vite::asset('resources/images/rv-text.svg'));
+        Config::set('statamic.cp.custom_logo_url.outside', Vite::asset('resources/images/rv-text.svg'));
 
         return $next($request);
     }
