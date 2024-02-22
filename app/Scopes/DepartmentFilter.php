@@ -4,7 +4,7 @@ namespace App\Scopes;
 
 use Statamic\Query\Scopes\Filter;
 
-class ClubmemberActive extends Filter
+class DepartmentFilter extends Filter
 {
     /**
      * Pin the filter.
@@ -20,7 +20,7 @@ class ClubmemberActive extends Filter
      */
     public static function title()
     {
-        return __('ClubmemberActive');
+        return __('DepartmentFilter');
     }
 
     /**
@@ -31,12 +31,11 @@ class ClubmemberActive extends Filter
     public function fieldItems()
     {
         return [
-            'isactive' => [
-                'type' => 'radio',
-                'options' => [
-                    'true' => __('Active'),
-                    'false' => __('NotActive'),
-                ]
+            'departments' => [
+                'type' => 'terms',
+                'taxonomies' => ['departments'],
+                'mode' => 'select',
+                'create' => false,
             ]
         ];
     }
@@ -50,15 +49,8 @@ class ClubmemberActive extends Filter
      */
     public function apply($query, $values)
     {
-        $query->where('is_active', $values['isactive'] === 'true');
+        app(DepartmentScope::class)->apply($query, $values['departments']);
     }
-
-
-    public function autoApply()
-    {
-        return ['isactive' => 'true'];
-    }
-
 
     /**
      * Define the applied filter's badge text.
@@ -68,9 +60,7 @@ class ClubmemberActive extends Filter
      */
     public function badge($values)
     {
-        return $values['isactive'] === 'true'
-            ? __('Active')
-            : __('NotActive');
+        return implode('/',  $values['departments']);
     }
 
     /**
