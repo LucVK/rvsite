@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
     private function setComputedValues(): void
     {
         Collection::computed('clubmembers', 'is_active', function ($entry, $value) {
-            return true;
+            return \App\ComputedValues\ClubmemberValues::isActive($entry);
         });
     }
 

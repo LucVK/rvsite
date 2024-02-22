@@ -18,5 +18,9 @@
     "Department": "Afdeling",
     "WtGroups": "Wielertoeristen groepen",
     "WtGroup": "Wielertoeristen groep",
+    "ImportClubmembers": "Clubleden importeren",
+    "ClubmemberActive": "Actieve leden",
+    "NotActive": "Niet actief",
+    "Active": "Actief",
     "TranslationTest": "Test vertaling"
 }

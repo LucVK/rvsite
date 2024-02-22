@@ -6621,16 +6621,16 @@
         },
         {
             "name": "studio1902/statamic-peak-commands",
-            "version": "v6.0.2",
+            "version": "v6.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studio1902/statamic-peak-commands.git",
-                "reference": "88a93408bfeab576cbe4b96527361d2d8dcea3a1"
+                "reference": "c58b7b62e33eb2c488ea7dd962e47659beb8e581"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studio1902/statamic-peak-commands/zipball/88a93408bfeab576cbe4b96527361d2d8dcea3a1",
-                "reference": "88a93408bfeab576cbe4b96527361d2d8dcea3a1",
+                "url": "https://api.github.com/repos/studio1902/statamic-peak-commands/zipball/c58b7b62e33eb2c488ea7dd962e47659beb8e581",
+                "reference": "c58b7b62e33eb2c488ea7dd962e47659beb8e581",
                 "shasum": ""
             },
             "require": {
@@ -6656,7 +6656,7 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/studio1902/statamic-peak-commands/issues",
-                "source": "https://github.com/studio1902/statamic-peak-commands/tree/v6.0.2"
+                "source": "https://github.com/studio1902/statamic-peak-commands/tree/v6.0.3"
             },
             "funding": [
                 {
@@ -6664,7 +6664,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-18T17:31:47+00:00"
+            "time": "2024-02-20T09:50:25+00:00"
         },
         {
             "name": "studio1902/statamic-peak-seo",

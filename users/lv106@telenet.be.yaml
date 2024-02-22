@@ -10,10 +10,4 @@ preferences:
       after_save: create_another
   collections:
     clubmembers:
-      columns:
-        - title
-        - is_active
-        - status
-        - birthday
-        - email
       per_page: 25
