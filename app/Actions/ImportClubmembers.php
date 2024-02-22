@@ -68,6 +68,11 @@ class ImportClubmembers extends Action
                     continue;
                 }
 
+                if ($department == 'dept-wt')
+                {
+                    continue;
+                }
+
                 $clubmember = Entry::query()->where('collection', 'clubmembers')
                     ->where('firstname', $firstname)
                     ->where('lastname', $lastname)
