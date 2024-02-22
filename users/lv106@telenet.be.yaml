@@ -11,3 +11,7 @@ preferences:
   collections:
     clubmembers:
       per_page: 25
+    pages:
+      columns:
+        - title
+        - status

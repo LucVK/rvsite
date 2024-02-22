@@ -11,6 +11,12 @@ tabs:
             field:
               type: hidden
               required: false
+              display: Naam
+              instructions_position: above
+              listable: true
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
           -
             handle: firstname
             field:
@@ -49,7 +55,7 @@ tabs:
               type: text
               display: Email
               width: 50
-              listable: hidden
+              listable: true
               instructions_position: above
               visibility: visible
               replicator_preview: true
