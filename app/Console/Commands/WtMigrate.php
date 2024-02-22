@@ -110,8 +110,6 @@ class WtMigrate extends Command
         });
     }
 
-
-    // private function findClubmember(string $email, string $firstname, string $lastname): ?Entry
     private function findClubmember(array $attributes): ?Entry
     {
         $builder = \Statamic\Facades\Entry::query()
@@ -141,11 +139,6 @@ class WtMigrate extends Command
 
     private function validateDate($date, $format = 'Y-m-d'): Carbon
     {
-        // $d = DateTime::createFromFormat($format, $date);
-        // // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
-        // return $d && $d->format($format) === $date;
-
-        // $this->line($date);
         $xx = Carbon::createFromFormat($format, trim($date));
         $xx->hour = 0;
         $xx->minute = 0;
